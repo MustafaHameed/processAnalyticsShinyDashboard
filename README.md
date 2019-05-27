@@ -18,4 +18,4 @@ comment-out the processanimatorOutput when using the processMap.
 ___
 
 ### main panel
-![alt text](https://github.com/kooskaspers/processAnalyticsShinyDashboard/md/main.png "Main panel")
+![alt text](https://github.com/kooskaspers/processAnalyticsShinyDashboard/blob/master/md/main.png "Main panel")
