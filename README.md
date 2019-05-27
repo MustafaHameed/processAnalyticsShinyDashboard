@@ -24,6 +24,6 @@ ___
 ### Process map
 ![alt text](https://github.com/kooskaspers/processAnalyticsShinyDashboard/blob/master/md/process-map.png "Process map")
 ### Performance map
-![alt text](https://github.com/kooskaspers/processAnalyticsShinyDashboard/blob/master/md/performance-map.png "Performance map")
+![alt text](https://raw.githubusercontent.com/kooskaspers/processAnalyticsShinyDashboard/master/md/performance-map.png "Performance map")
 ### Process animation
 ![alt text](https://github.com/kooskaspers/processAnalyticsShinyDashboard/blob/master/md/process-animation.png "Process animation")
