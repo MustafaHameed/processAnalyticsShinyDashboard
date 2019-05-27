@@ -8,6 +8,7 @@ library(lubridate)
 library(processanimateR)
 source("translateEventlogFHS.R")
 source("translateEventlogISD.R")
+library(eventdataR)
 
 sessionInfo()
 
@@ -36,7 +37,7 @@ event_log_df <-
 
 
 #translate NL -> EN in dataframe FHS
-# event_log_df <- translateEventlogFHS(event_log_df)
+event_log_df <- translateEventlogFHS(event_log_df)
 
 #translate HU -> EN in dataframe ISD
 # event_log_df <- translateEventlogISD(event_log_df)
@@ -54,7 +55,7 @@ event_log_df <- mutate(event_log_df, TIMESTAMP = ymd_hms(TIMESTAMP, truncated = 
 # cast amount to numeric, if column 'amount' exists. otherwise continue
 try({event_log_df$AMOUNT = as.numeric(as.character(event_log_df$AMOUNT))}, silent = TRUE)
 
-#create eventLog
+# create eventLog
 event_log <- bupaR::eventlog(eventlog = event_log_df,
                              case_id = "CASE",
                              activity_id = "ACTIVITY",
@@ -62,6 +63,7 @@ event_log <- bupaR::eventlog(eventlog = event_log_df,
                              timestamp = "TIMESTAMP",
                              lifecycle_id = "status",
                              resource_id = "RESOURCE")
+
 
 #describe data types
 # sapply(event_log, class)
@@ -285,7 +287,6 @@ server <- function(input, output) {
       print(paste("Applying time filter. Checking number of remaining cases: ",nrow(count(input_event_log, CASE))))
       if (nrow(count(input_event_log, CASE)) != 0 ) {
         input_event_log <- filter_time_period(input_event_log, interval = c(input$inputTimePeriodRange[1], input$inputTimePeriodRange[2]), filter_method = input$inputFilterMethod)
-        input_event_log <- filter_trace_frequency(input_event_log, percentage = (input$inputTraceFrequencyPerc / 100), reverse = F)
         print(paste("Cases left after applying time filter: ",nrow(count(input_event_log, CASE))))
         
       }
@@ -307,9 +308,14 @@ server <- function(input, output) {
       }
     }
     
+    #### TRACE FREQUENCY ####
+    print(paste("Applying trace frequency filter. Checking number of remaining cases: ",nrow(count(input_event_log, CASE))))
+    input_event_log <- filter_trace_frequency(input_event_log, percentage = (input$inputTraceFrequencyPerc / 100), reverse = F)
+    print(paste("Cases left after applying trace frequency filter: ",nrow(count(input_event_log, CASE))))
+    
+    
+    #### EVENT FILTERS ####
     input_event_log <- input_event_log %>%
-
-      #### EVENT FILTERS ####
       filter_resource_frequency(percentage = (input$inputResourceFrequence / 100)) %>%
       filter_activity_frequency(percentage = (input$inputActivityFrequence / 100))
     return(input_event_log)

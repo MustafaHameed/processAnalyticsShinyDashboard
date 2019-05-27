@@ -14,3 +14,8 @@ processanimaterOutput function cannot be combined with the processMap. The proce
 This bug is already repoted at the processanimatoR developer: https://github.com/fmannhardt/processanimateR/issues/16  
   
 comment-out the processanimatorOutput when using the processMap.
+
+___
+
+### main panel
+![alt text](https://github.com/kooskaspers/processAnalyticsShinyDashboard/md/main.png "Main panel")
