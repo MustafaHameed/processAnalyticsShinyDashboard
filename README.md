@@ -5,7 +5,9 @@ bupaR: https://www.bupar.net/
 processanimatoR: https://github.com/fmannhardt/processanimateR/
 shiny: https://shiny.rstudio.com/
 
-#known issues:
+___
+
+# known issues:
 processanimaterOutput function cannot be combined with the processMap. The procesMap throws an error:
 "TypeError: Cannot call a class as a function"
 
