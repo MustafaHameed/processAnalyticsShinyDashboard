@@ -18,12 +18,12 @@ comment-out the processanimatorOutput when using the processMap.
 ___
 
 ### Main panel with filtering methods
-![alt text](https://github.com/kooskaspers/processAnalyticsShinyDashboard/blob/master/md/main.png "Main panel")
+![alt text](https://raw.githubusercontent.com/kooskaspers/processAnalyticsShinyDashboard/master/md/main.png "Main panel")
 ### Event log
-![alt text](https://github.com/kooskaspers/processAnalyticsShinyDashboard/blob/master/md/event-log.png "Event log")
+![alt text](https://raw.githubusercontent.com/kooskaspers/processAnalyticsShinyDashboard/master/md/event-log.png "Event log")
 ### Process map
-![alt text](https://github.com/kooskaspers/processAnalyticsShinyDashboard/blob/master/md/process-map.png "Process map")
+![alt text](https://raw.githubusercontent.com/kooskaspers/processAnalyticsShinyDashboard/master/md/process-map.png "Process map")
 ### Performance map
 ![alt text](https://raw.githubusercontent.com/kooskaspers/processAnalyticsShinyDashboard/master/md/performance-map.png "Performance map")
 ### Process animation
-![alt text](https://github.com/kooskaspers/processAnalyticsShinyDashboard/blob/master/md/process-animation.png "Process animation")
+![alt text](https://raw.githubusercontent.com/kooskaspers/processAnalyticsShinyDashboard/master/md/process-animation.png "Process animation")
