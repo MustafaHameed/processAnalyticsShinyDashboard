@@ -1,3 +1,14 @@
 # processAnalyticsShinyDashboard
 Shiny dashboard consisting of process analytics toolset based on bupaR
-“This is a line from RStudio|""
+
+bupaR: https://www.bupar.net/
+processanimatoR: https://github.com/fmannhardt/processanimateR/
+shiny: https://shiny.rstudio.com/
+
+#known issues:
+processanimaterOutput function cannot be combined with the processMap. The procesMap throws an error:
+"TypeError: Cannot call a class as a function"
+
+This bug is already repoted at the processanimatoR developer: https://github.com/fmannhardt/processanimateR/issues/16
+
+comment-out the processanimatorOutput when using the processMap.
