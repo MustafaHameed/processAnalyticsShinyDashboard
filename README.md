@@ -17,7 +17,7 @@ comment-out the processanimatorOutput when using the processMap.
 
 ___
 
-### Main panel
+### Main panel with filtering methods
 ![alt text](https://github.com/kooskaspers/processAnalyticsShinyDashboard/blob/master/md/main.png "Main panel")
 ### Event log
 ![alt text](https://github.com/kooskaspers/processAnalyticsShinyDashboard/blob/master/md/event-log.png "Event log")
